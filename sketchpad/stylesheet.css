@@ -1,0 +1,25 @@
+
+
+.container {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+
+.square {
+	
+	width:100px;
+	height:100px;
+	background:red;
+	display: inline-block;
+}
+
+.blue {
+	background:blue;
+}
+
+p{
+	text-align: center;
+}
+
