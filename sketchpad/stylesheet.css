@@ -1,4 +1,6 @@
-
+body {
+	line-height: 0;
+}
 
 .container {
 	width: 400px;
@@ -9,8 +11,6 @@
 
 .square {
 	
-	width:100px;
-	height:100px;
 	background:red;
 	display: inline-block;
 }
