@@ -1,53 +1,42 @@
 
-var count = 4;
+var squaresPerRow = 8;
 
 $(document).ready(function(){
 
+	createGrid(squaresPerRow);
+});
 
+$("button").click(function(){
+	$(".square").remove();
 
-	for(var i  = 0; i < count*count; i++)
+	squaresPerRow = parseInt(prompt("How many squares per side (min:1;max:64)?",8),10);
+	if (squaresPerRow > 0 && squaresPerRow <= 64)
 	{
-
-		$('.grid').append("<div></div>");	
-		$('.grid > div').addClass('square');
+		createGrid(squaresPerRow);
+	
 	}
+	else
+	{
+		alert("Sorry that was not a valid input.");
+	}
+
 	
-
-	$(".square").hover(function(){
-		$(this).addClass("blue");
-	});
-
-	
-
 });
 
 
-$("button").click(function(){
-		$('div').removeClass("blue");
+function createGrid(numSquares) {
+	$grid = $('.grid');
+	for(var i  = 0; i < numSquares * numSquares; i++)
+	{
+		$grid.append("<div class='square'></div>");			
+	}
 
-		count = prompt("How many squares per side?",4);
+	var width = $(".container").width() / squaresPerRow;  
+	$(".square").css({"width":width ,"height":width});	
 
-		$(".square").remove();
-
-		
-
-
-		for(var i  = 0; i < count*count; i++)
-		{
-		$('.grid').append("<div></div>");	
-		$('.grid > div').addClass('square');
-		}
-
-		var width = 400 / count;
-		var height = 400 / count;
-		$(".square").css({"width":width ,"height":height});
-		console.log("hello");
-
-		$(".square").hover(function(){
+	$(".square").mouseenter(function(){
 		$(this).addClass("blue");
-		});
-
-
-		
-
 	});
+
+};
+

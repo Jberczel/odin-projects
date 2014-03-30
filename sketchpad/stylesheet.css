@@ -3,23 +3,28 @@ body {
 }
 
 .container {
-	width: 400px;
+	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 10px;
 }
 
 .square {
-	
-	background:red;
+	width:200px;
+	height:200px;
+	background-color:red;
 	display: inline-block;
 }
 
 .blue {
-	background:blue;
+	background-color:blue;
 }
 
 p{
 	text-align: center;
 }
+
+
+
+
 
