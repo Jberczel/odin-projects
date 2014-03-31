@@ -1,0 +1,1 @@
+### Javascript / jQuery mini-project: Etch-a-Sketch Pad
