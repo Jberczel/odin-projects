@@ -4,29 +4,18 @@ var squaresPerRow = 8;
 
 
 //when the document is ready, create grid using JQuery
-$(document).ready(function(){
-
-	//see helper funciton on line 32
+$(document).ready(function(){	
 	createGrid(squaresPerRow,false);
 });
 
-$("button").click(function(){
 
-	$(".square").remove();
+$(".oneColor").click(function(){
+	updateGrid(false);	
+});
 
-	//get number of squares from user and data validaiton
-	squaresPerRow = parseInt(prompt("How many squares per side (min:1;max:64)?",8),10);
-	if (squaresPerRow > 0 && squaresPerRow <= 64)
-	{
-		createGrid(squaresPerRow, true);
-	
-	}
-	else
-	{
-		alert("Sorry that was not a valid input.");
-	}
-	
-	
+
+$(".colors").click(function(){
+	updateGrid(true);
 });
 
 //helper function to build square grid 
@@ -56,6 +45,24 @@ function createGrid(numSquares,isColor) {
 	});
 
 };
+
+function updateGrid(isColor){
+
+	$(".square").remove();
+
+	//get number of squares from user and data validaiton
+	squaresPerRow = parseInt(prompt("Enter number of squares (1-64): ",8),10);
+	if (squaresPerRow > 0 && squaresPerRow <= 64)
+	{
+		createGrid(squaresPerRow, isColor);
+	
+	}
+	else
+	{
+		alert("Sorry that was not a valid input.");
+	}	
+
+}
 
 //helper function to generate random colors
 function getColor() {
