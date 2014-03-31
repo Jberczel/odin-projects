@@ -2,6 +2,8 @@
 /* gets rid of spacing between rows of squares */
 body {
 	line-height: 0;
+	font-family:arial;
+
 }
 
 /* can change width and squares will adjust */
@@ -9,7 +11,7 @@ body {
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 10px;
+	margin-top: 40px;
 }
 
 
@@ -18,18 +20,14 @@ body {
 	display: inline-block;
 }
 
-
-.marked {
-	background-color:blue;
-}
-
 h1, p{
 	text-align: center;
+
 }
 
+/* used for gradient button */
 .grid {
-	/*border: 2px solid black; */
-	background-color:black;
+	background-color:black; 
 }
 
 

@@ -6,28 +6,28 @@ var squaresPerRow = 40;
 //when the document is ready, create grid using JQuery
 $(document).ready(function(){	
 
-	createGrid(squaresPerRow,"oneColor");
+	createGrid(squaresPerRow,"black");
 });
 
-
+//clears the current drawing
 $(".clear").click(function(){
-	$("div").removeClass("marked");
 	$(".square").css({
 		"background-color":"#E8E8E8", 
 		"opacity":"1"});
 
-	console.log("hello");
 });
 
-$(".oneColor").click(function(){
-	updateGrid("oneColor");	
+//creates new Grid with black marker
+$(".black").click(function(){
+	updateGrid("black");	
 });
 
-
+//creates new grid with random color marker
 $(".colors").click(function(){
 	updateGrid("colors");
 });
 
+//creates new grid with gradient marker
 $(".opaque").click(function(){
 	updateGrid("opaque");
 
@@ -44,7 +44,7 @@ function createGrid(numSquares,option) {
 		$grid.append("<div class='square'></div>");			
 	}
 
-	$(".grid_label").html(squaresPerRow + " x " + squaresPerRow + " grid");
+	$(".grid_label").html("Draw by hovering mouse in " + squaresPerRow + " x " + squaresPerRow + " grid below:");
 
 	//resize squares to fit within container
 	var width = ($(".container").width())/ squaresPerRow;  
@@ -63,7 +63,8 @@ function createGrid(numSquares,option) {
 			$(this).css("opacity", $(this).css("opacity") * 0.75);
 		}
 		else{
-			$(this).addClass("marked");
+		
+			$(this).css("background-color", "black");
 		}
 	});
 };
@@ -72,7 +73,7 @@ function createGrid(numSquares,option) {
 function updateGrid(option){
 
 	$(".square").remove();
-	
+
 	//maintains border after deleting all the squares inside
 	//var height = $(".container").width()
 	//	$(".grid").css("height",height);
