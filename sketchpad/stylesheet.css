@@ -30,6 +30,11 @@ h1, p{
 	background-color:black; 
 }
 
+button > a {
+	text-decoration:none;
+	font-color:black;
+}
+
 
 
 
