@@ -14,7 +14,7 @@ body {
 
 
 .square {
-	background-color:red;
+	background-color:#E8E8E8;
 	display: inline-block;
 }
 
@@ -25,6 +25,11 @@ body {
 
 p{
 	text-align: center;
+}
+
+.grid {
+	/*border: 2px solid black; */
+	background-color:black;
 }
 
 
