@@ -1,7 +1,10 @@
+
+/* gets rid of spacing between rows of squares */
 body {
 	line-height: 0;
 }
 
+/* can change width and squares will adjust */
 .container {
 	width: 800px;
 	margin-left: auto;
@@ -9,14 +12,14 @@ body {
 	margin-top: 10px;
 }
 
+
 .square {
-	width:200px;
-	height:200px;
 	background-color:red;
 	display: inline-block;
 }
 
-.blue {
+
+.marked {
 	background-color:blue;
 }
 
