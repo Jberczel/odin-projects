@@ -22,7 +22,7 @@ $(".black").click(function(){
 	updateGrid("black");	
 });
 
-//creates new grid with random color marker
+//creates new grid_label with random color marker
 $(".colors").click(function(){
 	updateGrid("colors");
 });
