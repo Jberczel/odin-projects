@@ -44,7 +44,7 @@ function createGrid(numSquares,option) {
 		$grid.append("<div class='square'></div>");			
 	}
 
-	$(".grid_label").html("Draw by hovering mouse in " + squaresPerRow + " x " + squaresPerRow + " grid below:");
+	$(".grid_label").html("Draw by hovering mouse over " + squaresPerRow + " x " + squaresPerRow + " grid below:");
 
 	//resize squares to fit within container
 	var width = ($(".container").width())/ squaresPerRow;  
