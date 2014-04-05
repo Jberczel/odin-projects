@@ -58,6 +58,10 @@ body{
 	float:right;
 }
 
+.left {
+	float: left;
+}
+
 ul, li {
 	display:inline-block;
 
