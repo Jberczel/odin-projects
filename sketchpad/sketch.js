@@ -1,6 +1,6 @@
 
 //deafult number of squares
-var squaresPerRow = 40;
+var squaresPerRow = 50;
 
 
 //when the document is ready, create grid using JQuery
@@ -33,6 +33,11 @@ $(".opaque").click(function(){
 
 });
 
+$(".trail").click(function(){
+	updateGrid("trail");
+
+});
+
 //helper function to build square grid 
 // parameters for number of squares per row and whether using random color generator
 function createGrid(numSquares,option) {
@@ -50,23 +55,37 @@ function createGrid(numSquares,option) {
 	var width = ($(".container").width())/ squaresPerRow;  
 	$(".square").css({"width":width ,"height":width});	
 
-	//anytime mouse enters one of squares, change color
-	$(".square").mouseenter(function(){
-	
 
-		if (option === "colors") {
-			$(this).css("background-color", getColor());
-		}
-		else if(option === "opaque")
-		{
-			//reduces opacity by 25% each mouseenter
-			$(this).css("opacity", $(this).css("opacity") * 0.75);
-		}
-		else{
+	if (option === "trail")
+	{
+		$(".square").hover(function() {
+			$(this).css("opacity", 0);
+		}, function () {
+			$(this).fadeTo('fast', 1);
+		});
+
+
+	}
+	else {
+		//anytime mouse enters one of squares, change color
+		$(".square").mouseenter(function(){
 		
-			$(this).css("background-color", "black");
-		}
-	});
+
+			if (option === "colors") {
+				$(this).css("background-color", getColor());
+			}
+			else if(option === "opaque")
+			{
+				//reduces opacity by 25% each mouseenter
+				$(this).css("opacity", $(this).css("opacity") * 0.75);
+			}
+			else{
+			
+				$(this).css("background-color", "black");
+			}
+		});
+	}
+	
 };
 
 //deletes old grid (start with clean slate), and then prompts user and creates updated grid
@@ -79,7 +98,7 @@ function updateGrid(option){
 	//	$(".grid").css("height",height);
 
 	//get number of squares from user and data validaiton
-	squaresPerRow = parseInt(prompt("Enter number of squares (1-64): ",40),10);
+	squaresPerRow = parseInt(prompt("Enter number of squares (1-64): ",50),10);
 	if (squaresPerRow > 0 && squaresPerRow <= 64)
 	{
 
