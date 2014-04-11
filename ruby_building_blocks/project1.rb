@@ -3,11 +3,10 @@
 def caesar_cipher(text, num)
 	
 	cipher = ""
-
-	for i in 0...text.length
+	
+	text.each_char  do |letter|  
 		#converts letter to number and shifts by num (26 is number of letters in alphabet)
-		val = text[i].ord + (num % 26) 
-		letter = text[i]
+		val = letter.ord + (num % 26) 
 
 		#sets upcase letter to value  within 65 and 90, aschii values for A-Z
 		if letter =~ /[A-Z]/ && val > 90 
@@ -16,10 +15,6 @@ def caesar_cipher(text, num)
 		#sets lowercase letter to value within 97 and 122, ascii values a-z
 		elsif letter =~/[a-z]/ && val > 122	
 				val = (val % 122) + 96 
-
-		#sets spaces to 32, ascii value for spaces
-		elsif letter =~ /\s/ #can combine with last condition?
-				val = 32
 
 		#sets puncation to ascii value without shifting
 		elsif letter =~ /\W/
