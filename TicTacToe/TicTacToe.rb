@@ -1,7 +1,9 @@
 
 class Game
   attr_reader :grid, :player_1, :player_2, :game_status
-  @@wins = [[0, 1 ,2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]] # winning combos
+  @@wins = 
+    [[0, 1 ,2], [3, 4, 5], [6, 7, 8], [0, 3, 6], 
+     [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]] # winning combos
 
   def initialize
     @grid = Board.new
@@ -44,7 +46,7 @@ class Game
     loop do
       puts "Turn: #{@turns}"
       print "#{player.name} ('#{player.sym}') "
-      input = valid_name
+      input = valid_name  
       if @grid.update(input, player.sym)
         @turns += 1
         check_for_win(player)
