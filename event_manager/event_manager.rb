@@ -40,25 +40,32 @@ def clean_phone(phone)
   phone[0..2] + '-' + phone[3..5] + '-' + phone[6..9]
 end
 
-# prints list of hours with most registrants
+# prints list of hours with most registrants, REFACTOR AT SOME POINT
 def peak_hours(all_hours)
   puts 'PEAK HOURS:'
   puts '-----------'
-  peak_hours = all_hours.sort_by { |k, v| v }.reverse.first(5)
-  peak_hours. each { |hour, count| puts "hour: #{hour} count: #{count}" }
+  total = all_hours.values.inject(0) { |sum, i| sum + i }
+  peak_hours = all_hours.sort_by { |k, v| v }.reverse.first 3
+  peak_hours. each do |hour, count|
+    puts "hour: #{hour} count: #{count} (#{(count.to_f / total * 100).round(1)}%)"
+  end
   puts "\n"
 end
 
-# prints list of days with # of registrants
+# prints list of days with # of registrants, REFACTOR AT SOME POINT
 def peak_days(days_of_week)
   puts 'PEAK DAYS'
   puts '---------'
+  total = days_of_week.values.inject(0) { |sum, i| sum + i }
   sorted_days = days_of_week.sort_by { |k, v| v }.reverse
-  sorted_days.each { |i| puts "#{i[0]}:".rjust(10, ' ') + " #{i[1]}" }
+  sorted_days.each do |hour, count|
+    puts "#{hour}:".rjust(10, ' ') + " #{count.to_s.rjust(4, ' ')} (#{(count.to_f / total * 100).round(1)}%)"
+  end
   puts "\n"
 end
 
-contents = CSV.open 'event_attendees.csv', headers: true, header_converters: :symbol
+#needed to change encoding for full_event_attendees.csv file 
+contents = CSV.open 'full_event_attendees.csv', headers: true, header_converters: :symbol, encoding: "ISO8859-1"
 
 # template for thank you letters
 template_letter = File.read 'form_letter.erb'
