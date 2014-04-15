@@ -6,17 +6,17 @@ Program parses .csv database, cleans records, creates and writes to new files, a
 
 ####The techniques practiced:
 
-File input and output
-Reading data from CSV files
-String manipulation
-Accessing Sunlight’s Congressional API through the Sunlight Congress gem
-Using ERB for templating
+* File input and output
+* Reading data from CSV files
+* String manipulation
+* Accessing Sunlight’s Congressional API through the Sunlight Congress gem
+* Using ERB for templating
 
 ####Requirements
 
-Ruby Environment
-Sample Data in CSV Format
-Sunlight-Congress Gem
+* Ruby Environment
+* Sample Data in CSV Format
+* Sunlight-Congress Gem
 
 #### Output for Time and Day of Week Targeting 
 data from full_event_attendees.csv file
