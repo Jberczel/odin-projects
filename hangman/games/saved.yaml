@@ -1,27 +1,31 @@
 --- !ruby/object:Hangman
 word:
+- m
+- o
+- u
+- s
 - s
 - o
-- l
-- i
-- d
-- a
 - r
-- i
-- t
+- g
+- s
+- k
 - y
 display:
+- _
+- o
+- u
 - s
-- _
-- l
-- _
-- _
-- _
+- s
+- o
 - r
 - _
-- t
-- y
-guesses: []
+- s
+- k
+- _
 misses:
-- n
-turns: 5
+- a
+- e
+- i
+- d
+turns: 2
