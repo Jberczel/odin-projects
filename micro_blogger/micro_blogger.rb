@@ -7,7 +7,7 @@ class MicroBlogger
   attr_reader :client
 
   def initialize
-    puts "Initializing"
+    puts 'Initializing'
     @client = JumpstartAuth.twitter # authentictes with twitter api
   end
 
@@ -23,7 +23,7 @@ class MicroBlogger
 
   # main loop of program
   def run
-    puts "Welcome to the JSL Twitter Client!"
+    puts 'Welcome to the JSL Twitter Client!'
     command = ''
     while command != 'q'
       printf 'enter command:'
@@ -31,7 +31,7 @@ class MicroBlogger
       parts = input.split
       command = parts[0]
       case command
-         when 'q' then puts "Goodbye!"
+         when 'q' then puts 'Goodbye!'
          when 't' then tweet(parts[1..-1].join(' '))
          when 'dm' then dm(parts[1], parts[2..-1].join(' '))
          when 'spam' then spam_my_followers(parts[1..-1].join(' '))
@@ -49,7 +49,7 @@ class MicroBlogger
     puts "Trying to send #{target} this direct message:"
     puts message
 
-    screen_names = @client.followers.collect{|follower| follower.screen_name}
+    screen_names = @client.followers.map { |follower| follower.screen_name }
     if screen_names.include?(target)
       msg = "d #{target} #{message}"
       tweet(msg)
@@ -62,7 +62,7 @@ class MicroBlogger
   def followers_list
     screen_names = []
     @client.followers.each { |follower| screen_names << follower['screen_name'] }
-    screen_names   
+    screen_names
   end
 
   # sends direct message to all your followers
@@ -75,7 +75,7 @@ class MicroBlogger
   def everyones_last_tweet
     friends = @client.friends.sort_by { |friend| friend.screen_name.downcase }
     friends.each do |friend|
-      timestamp = friend.status.created_at    
+      timestamp = friend.status.created_at
       puts "#{friend.screen_name.upcase} (#{timestamp.strftime("%b %d")}): #{friend.status.text}"
     end
   end
@@ -83,14 +83,9 @@ class MicroBlogger
   def shorten(original_url)
     bitly = Bitly.new('hungryacademy', 'R_430e9f62250186d2612cca76eee2dbc6')
     puts "Shortening this URL: #{original_url}"
-    short_url = bitly.shorten(original_url).short_url
+    bitly.shorten(original_url).short_url
   end
-  
 end
 
 blogger = MicroBlogger.new
 blogger.run
-
-
-
-
