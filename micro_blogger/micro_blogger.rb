@@ -1,6 +1,7 @@
 require 'jumpstart_auth'
 require 'bitly'
 
+# to shorten urls
 Bitly.use_api_version_3
 
 class MicroBlogger
