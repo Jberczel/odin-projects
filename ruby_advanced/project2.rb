@@ -70,10 +70,10 @@ module Enumerable
       return new_array
     else
       return self
-    end   
+    end
   end
 =end
-  
+
   def my_map(code_block)
     new_array = []
     if code_block
@@ -86,23 +86,14 @@ module Enumerable
     end
   end
 
-  def my_inject(num = nil) 
-    accumulator = num.nil? ? self.first : num
+  def my_inject(num = nil)
+    accumulator = num.nil? ? first : num
     my_each { |i| accumulator = yield(accumulator, i) }
     accumulator
   end
 end # end of module
 
   # uses #my_inject method to multiply all elements in list
-  def multiply_els(list)
-    list.my_inject(1) { |product, i| product * i }
-  end
-
-
-
-
-
-
-
-
-
+def multiply_els(list)
+  list.my_inject(1) { |product, i| product * i }
+end
