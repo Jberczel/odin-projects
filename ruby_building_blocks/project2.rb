@@ -1,3 +1,4 @@
+# 
 def stock_picker(days)
 	purchase_date, sell_date, max_profit = 0, 0, 0	
 	i = 0
