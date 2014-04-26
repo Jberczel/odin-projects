@@ -2,13 +2,13 @@
 require 'socket'
 require 'json'
  
-host = 'localhost'    
-port = 2000                          
-params = Hash.new{|hash, key| hash[key] = Hash.new}         
+host = 'localhost'
+port = 2000
+params = Hash.new { |hash, key| hash[key] = Hash.new }         
 
 # input validation: require GET or POST
 input = ''
-until input == 'GET' or input == 'POST'
+until input == 'GET' || input == 'POST'
   print 'What type of request do you want to submit [GET, POST]? '
   input = gets.chomp
 end
@@ -33,5 +33,6 @@ socket = TCPSocket.open(host,port)            # Connect to server
 socket.print(request)                         # Send request
 response = socket.read                        # Read complete response                                              
 headers,body = response.split("\r\n\r\n", 2)  # Split response at first blank line into headers and body
-print body 
-socket.close                       
+puts ''
+print body
+socket.close
