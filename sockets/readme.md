@@ -1,6 +1,9 @@
 ## Web Server and Browser (from the command line)
 
-Building a simple Ruby web server that receives requests and sends a response based on those requests. You'll also create a simple browser client to issue those requests.
+**Objective:** build a simple Ruby web server that receives requests and sends a response based on those requests. Also create a simple browser client to issue those requests.
+
+
+**My Solution:**
 
 In one tab of your terminal, run `server.rb`.
 
