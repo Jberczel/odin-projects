@@ -1,20 +1,22 @@
 <h1><%= @article.title %></h1>
+
+<div class='articles'>
 <p>
-	Tags:
-	<% @article.tags.each do |tag| %>
-	<%= link_to tag.name, tag_path(tag) %>
-	<% end %>
+  Tags:
+  <% @article.tags.each do |tag| %>
+  <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
 </p>
 
 <p>
-	<% if @article.image.exists? %>
-		<%= image_tag @article.image.url %>
-	<% end %>
+  <% if @article.image.exists? %>
+    <%= image_tag @article.image.url %>
+  <% end %>
 </p>
 
 <p><%= @article.body %></p>
 
-<h3>Comments (<%= @article.comments.size %>)</h3>
+<h4>Comments (<%= @article.comments.size %>)</h4>
 <%= render partial: 'articles/comment',collection:@article.comments %>
 
 <%= render partial: 'comments/form' %>
@@ -26,5 +28,5 @@
 <%= link_to "edit", edit_article_path(@article) %>
 <% end %>
 
-
+</div>
 

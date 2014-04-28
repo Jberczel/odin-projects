@@ -1,6 +1,6 @@
-<h1>All Articles</h1>
+<h1>My Articles</h1>
 
-<ul id="articles">
+<ul class="articles">
 	<% @articles.each do |article| %>
 	<li>
 		<%=link_to article.title, article_path(article), class: 'article_title' %>
@@ -8,6 +8,17 @@
 	<% end %>
 </ul>
 
-<% if logged_in? %>
-<%= link_to "Create a New Article", new_article_path, class: 'new_article' %>
-<% end %>
+<div id="sidebar"> 
+  <ul>
+    <li> <%= link_to 'About', '#' %> </li>
+    <li><%= link_to 'FAQ', '#' %> </li>
+    <li><%= link_to 'Contact', '#' %> </li>
+    <li><%= link_to 'Links', '#' %> </li>
+  </ul>
+</div>
+
+<div class='clear'>
+  <% if logged_in? %>
+  <%= link_to "Create a New Article", new_article_path, class: 'new_article' %>
+  <% end %>
+</div>

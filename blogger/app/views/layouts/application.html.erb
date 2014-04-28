@@ -11,17 +11,21 @@
 <div id="container">
     <div id="content">
       <%= yield %>
-      <hr>
-      <h6>
-        <% if logged_in? %>
-          <%= "Logged in as #{current_user.email}" %>
-          <%= link_to "(logout)", logout_path %>
-        <% else %>
-          <%= link_to "(login)",login_path %>
-        <% end %>
-      </h6>
-    </div>
+      
+  <footer>
+    <hr>
+    <h6>
+      <% if logged_in? %>
+        <%= "Logged in as #{current_user.email}" %>
+        <%= link_to "(logout)", logout_path %>
+      <% else %>
+        <%= link_to "(login)",login_path %>
+      <% end %>
+    </h6>
+  </footer>
   </div>
+  
+</div>
 
 </body>
 </html>

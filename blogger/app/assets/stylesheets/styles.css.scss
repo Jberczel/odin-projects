@@ -1,36 +1,125 @@
+@import "bootstrap";
+
 $primary_color: #FFF;
 
 body {
   background-color: $primary_color;
-  font: {
+  /*font: {
     family: Verdana, Helvetica, Arial;
     size: 14px;
-  }
+  }*/
 }
 
 a {
-  color: #0000FF;
+  color: $gray;
   img {
     border: none;
   }
 }
 
+.articles {
+  float:left;
+  list-style: none;
+  padding-left: 40px;
+  a {
+    color: $gray;
+    font-size: 1.2em;
+
+  }
+  
+}
+
+.float-left {
+  float:left;
+}
+
 .clear {
   clear: both;
-  height: 0;
+/*  height: 0;*/
   overflow: hidden;
+
 }
 
 #container {
-  width: 75%;
+  width: 60%;
   margin: 0 auto;
   background: #fff;
   padding: 20px 40px;
-  border: solid 1px black;
+  border: solid 1px #eeeeee;
   margin-top: 20px;
 }
 
 #content {
-  clear: both;
   padding-top: 20px;
+
 }
+
+#sidebar {
+  float:right;
+  border-left: solid 1px #eee;
+  ul {
+    list-style: none;
+    padding-right: 40px;
+  }
+
+}
+
+footer {
+  clear:both;
+  a, h6 {
+    padding-left: 40px;
+  }
+
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+label {
+  font-weight: normal;
+}
+
+td, th {
+  padding: 5px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.1em;
+}
+
+
+

@@ -1,11 +1,10 @@
 <h1>Listing authors</h1>
 
-<table>
+<table class='float-left'>
   <thead>
     <tr>
       <th>Email</th>
-      <th>Password</th>
-      <th>Password confirmation</th>
+
       <th></th>
       <th></th>
       <th></th>
@@ -16,16 +15,18 @@
     <% @authors.each do |author| %>
       <tr>
         <td><%= author.email %></td>
-        <td><%= author.password %></td>
-        <td><%= author.password_confirmation %></td>
-        <td><%= link_to 'Show', author %></td>
-        <td><%= link_to 'Edit', edit_author_path(author) %></td>
-        <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><%= link_to 'Show ', author %></td>
+        <td><%= link_to 'Edit ', edit_author_path(author) %></td>
+        <td><%= link_to 'Destroy ', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+   
+    <td> <%= link_to 'New Author', new_author_path %></td>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Author', new_author_path %>
+
+</div>
+
