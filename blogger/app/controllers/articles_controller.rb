@@ -9,6 +9,8 @@ before_filter :require_login, except: [:index, :show]
 
 	def show
 		@article = Article.find(params[:id])
+		@article.count
+		@article.update(params[:view_count])
 		@comment = Comment.new
 		@comment.article_id = @article.id
 		

@@ -1,12 +1,15 @@
 <h1><%= @article.title %></h1>
 
 <div>
-<p>
+<small>
   Tags:
   <% @article.tags.each do |tag| %>
   <%= link_to tag.name, tag_path(tag) %>
   <% end %>
-</p>
+</small>
+<br>
+<small>Views: <%= @article.view_count %></small>
+<hr>
 
 <p>
   <% if @article.image.exists? %>
@@ -15,7 +18,7 @@
 </p>
 
 <p><%= @article.body %></p>
-
+<hr>
 <h4>Comments (<%= @article.comments.size %>)</h4>
 <%= render partial: 'articles/comment',collection:@article.comments %>
 
