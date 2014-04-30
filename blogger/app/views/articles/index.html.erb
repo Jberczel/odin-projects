@@ -8,16 +8,9 @@
 	<% end %>
 </ul>
 
-<div id="sidebar"> 
-  <ul>
-    <li> <%= link_to 'About', '#' %> </li>
-    <li><%= link_to 'FAQ', '#' %> </li>
-    <li><%= link_to 'Contact', '#' %> </li>
-    <li><%= link_to 'Links', '#' %> </li>
-  </ul>
-</div>
 
-<div class='clear'>
+
+<div>
   <% if logged_in? %>
   <%= link_to "Create a New Article", new_article_path, class: 'new_article' %>
   <% end %>

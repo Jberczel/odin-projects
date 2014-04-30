@@ -8,24 +8,48 @@
 </head>
 <body>
 <p class="flash"><%= flash.notice %></p>
-<div id="container">
-    <div id="content">
-      <%= yield %>
-      
-  <footer>
-    <hr>
-    <h6>
-      <% if logged_in? %>
-        <%= "Logged in as #{current_user.email}" %>
-        <%= link_to "(logout)", logout_path %>
-      <% else %>
-        <%= link_to "(login)",login_path %>
-      <% end %>
-    </h6>
-  </footer>
+
+
+<div class="container">
+<a href='/' class="blog-header">
+  <h1 class="blog-title">My Practice Blog</h1>
+  <p class="blog-description">Building a website with Ruby on Rails</p>
+</a>
+
+<div class="row">
+  <div class="col-sm-8 blog-main">    
+     <%= yield %>
   </div>
-  
+  <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+    <ul class="sidebar-module">
+      <li> <%= link_to 'Tags', tags_path %></li>
+      <li> <%= link_to 'About', '#' %> </li>
+      <li><%= link_to 'FAQ', '#' %> </li>
+      <li><%= link_to 'Contact', '#' %> </li>
+      <li><%= link_to 'Links', '#' %> </li>
+    </ul>
 </div>
+</div>
+
+<footer>
+<hr>
+<h6>
+  <% if logged_in? %>
+    <%= "Logged in as #{current_user.email}" %>
+    <%= link_to "(logout)", logout_path %>
+  <% else %>
+    <%= link_to "(login)",login_path %>
+  <% end %>
+</h6>
+</footer>
+
+
+
+
+</div>
+
+
+
 
 </body>
 </html>
