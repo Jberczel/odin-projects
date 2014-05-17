@@ -1,6 +1,6 @@
 ## Twitter Spambot 
 
-#### Microblogger utorial from Jumpstart Labs
+#### Microblogger tutorial from Jumpstart Labs
 
 In this multi-phase project, you will build a client that interacts with the Twitter messaging service. Your client will both mimic functionality found through the twitter.com web interface as well as perform many new tasks.
 
