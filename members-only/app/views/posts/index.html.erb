@@ -1,0 +1,28 @@
+<div class="float-right">
+  <% if signed_in? %>
+  <%= link_to "(#{current_user.name}) Sign out", signout_path, method: "delete" %>
+  <% else %>
+    <%= link_to 'Sign in', signin_path %>
+  <% end %>
+</div>
+
+<h1>Members Only Posts</h1>
+
+<% @posts.each do |post| %>
+  <% if signed_in? %>
+    <p class="float-right">
+      Posted by:
+      <%= post.user.name %>
+    </p>
+  <% end %>
+  <h4 class="float-left"><%=post.title %></h4>  
+  <p class="clear"><%= post.body %></p>
+<% end %>
+
+<% if signed_in? %>
+  <%= link_to "Create a Post", new_post_path %>
+<% end %>
+
+
+
+
