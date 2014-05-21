@@ -9,8 +9,8 @@ $("#btn1").click(function(){
 
 $("#btn2").click(function(){
 	var usr_input = parseInt($("#2").val(), 10)
-	var solution = fibonacci(usr_input)
-	$("#solution2").html("Answer: " + fibonacci(usr_input))
+	var solution = even_fib(usr_input)
+	$("#solution2").html("Answer: " + even_fib(usr_input))
 });
 
 $("#btn3").click(function(){
@@ -34,7 +34,7 @@ var multiplesOf = function (num) {
 
 
 
-var fibonacci = function(num) {
+var even_fib = function(num) {
 	var curr = 2;
 	var last = 1;
 	var temp = 0;
@@ -79,14 +79,14 @@ console.log(multiplesOf(1000));
 console.log("\n");
 
 
-console.log("TEST FIBONACCI FUNCTION:")
+console.log("TEST even_fib FUNCTION:")
 console.log("Expected: 10");
-console.log("Actual: " + fibonacci(10));
+console.log("Actual: " + even_fib(10));
 
 console.log("Expected: 44");
-console.log("Actual: " + fibonacci(100));
+console.log("Actual: " + even_fib(100));
 
-console.log("Actual: " + fibonacci(4000000));
+console.log("Actual: " + even_fib(4000000));
 console.log("\n");
 
 
