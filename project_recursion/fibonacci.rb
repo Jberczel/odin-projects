@@ -1,6 +1,3 @@
-
-
-
 def fibs(num)
   curr, last = 0, 1
   num.times do

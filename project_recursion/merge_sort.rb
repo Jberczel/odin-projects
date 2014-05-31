@@ -1,5 +1,3 @@
-
-
 def merge_sort(a)
   return a if a.length == 1
   half = a.length / 2
@@ -14,7 +12,7 @@ def merge(l, r)
   m = Array.new
   len_l, len_r = l.length, r.length
 
-  while i < len_l || j < len_r
+  while i < len_l || j < len_r  #  ugly, need to refactor.
     if i < len_l && j < len_r
       if l[i] <= r[j]
         m << l[i]
