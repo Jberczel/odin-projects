@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @kitten.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @kitten.age %>
+</p>
+
+<p>
+  <strong>Cuteness:</strong>
+  <%= @kitten.cuteness %>
+</p>
+
+<p>
+  <strong>Softness:</strong>
+  <%= @kitten.softness %>
+</p>
+
+<%= link_to 'Edit', edit_kitten_path(@kitten) %> |
+<%= link_to 'Back', kittens_path %>
